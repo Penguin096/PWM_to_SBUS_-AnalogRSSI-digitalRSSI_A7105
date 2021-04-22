@@ -4,5 +4,5 @@
 * Результат слияния двух проектов https://github.com/Penguin096/PWM_to_SBUS  ++  https://github.com/Penguin096/RSSI-A7105
 
 * Программа для ПК для проверки SBUS шины https://github.com/Penguin096/
-* ![image](https://user-images.githubusercontent.com/65414023/115793980-d7464400-a3d5-11eb-845c-8071502a13cd.png)
+* ![image](https://user-images.githubusercontent.com/65414023/115794990-b848b180-a3d7-11eb-9e91-6f6923723f1d.png)
 
