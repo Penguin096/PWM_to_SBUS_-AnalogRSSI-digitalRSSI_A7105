@@ -19,6 +19,8 @@ ISR(PCINT0_vect, ISR_ALIASOF(PCINT2_vect));  //общий обработчик �
 #define TWAIT 200       // время ожидания получения rssi //ms >ADCTime_UPDATE
 #define numReadings 16  // количество отсчетов для усреднеия
 
+#include <avr/wdt.h>
+
 uint32_t sbusTime = 0;
 uint32_t ADCTime = 0;
 
@@ -100,6 +102,10 @@ ISR(SERVO_INT_VECTOR) {  // Обработчик запросов прерыва
       // Select next servo pin
       servo_pin <<= 1;
     }
+
+    // Reset Watchdog Timer
+    wdt_reset();
+
     // Store current servo input pins for next check
     servo_pins_old = servo_pins;
     servo_pins = ((PIND & ~0b11) | (PINB & 0b11));  //D7...D0 и D9...D8
@@ -149,6 +155,8 @@ void sbusPreparePacket(bool digitalCH1, bool digitalCH2, bool isSignalLoss, bool
 }
 
 void setup() {
+  wdt_enable(WDTO_250MS);  //Enable watchdog
+
   Serial.begin(100000, SERIAL_8E2);
 
   // SERVO and RSSI INPUT PINS
@@ -175,9 +183,8 @@ void setup() {
 }
 
 void loop() {
-
   if ((millis() - sbusTime) > SBUS_UPDATE_RATE) {
-    Serial.write(millis()-sbusTime);  //Отладка
+    //Serial.write(millis() - sbusTime);  //Отладка
     sbusTime = millis();
     sbusPreparePacket(false, false, false, false);
     Serial.write(sbusPacket, 25);
