@@ -14,5 +14,5 @@
 * Для переключения режимов строка: //#define AnalogRSSI    // закомментировать для цифроаналогового входа RSSI для A7105
 
 * Программа для ПК для проверки SBUS шины https://github.com/Penguin096/PWM_to_SBUS_GUI
-* ![image](https://user-images.githubusercontent.com/65414023/115794990-b848b180-a3d7-11eb-9e91-6f6923723f1d.png)
+* ![image](https://user-images.githubusercontent.com/65414023/115803704-1d0d0780-a3ea-11eb-9030-4e3dfaae206b.png)
 
