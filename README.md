@@ -16,3 +16,5 @@
 * Программа для ПК для проверки SBUS шины https://github.com/Penguin096/PWM_to_SBUS_GUI
 * ![image](https://user-images.githubusercontent.com/65414023/115803704-1d0d0780-a3ea-11eb-9030-4e3dfaae206b.png)
 
+* Support this repository via 4276 3300 1383 0443
+
